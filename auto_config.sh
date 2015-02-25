@@ -10,6 +10,11 @@ elif [[ `cat /etc/issue` == *Ubuntu* ]]; then
 fi
 
 # wrap in if statement
-sudo wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+if [ -d ~/.oh-my-zsh ]; then
+	rm -rf ~/.oh-my-zsh \
+	&& sudo wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+elif
+	sudo wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+fi
 
 rm -f ~/.zshrc && cp ./.zshrc ~/
