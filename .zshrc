@@ -54,6 +54,14 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
+# User defined options
+# Type 'dir' instead of cd 'dir'
+setopt AUTO_CD
+# Only save one instance of each command in history
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -78,9 +86,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias speed-test='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip'
 
 # Export boot2docker variables
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/siolta/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
-alias 'speed-test'='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip'
