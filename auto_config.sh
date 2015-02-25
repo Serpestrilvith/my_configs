@@ -13,7 +13,7 @@ fi
 if [ -d ~/.oh-my-zsh ]; then
 	rm -rf ~/.oh-my-zsh \
 	&& sudo wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
-elif
+elif; then
 	sudo wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 fi
 
