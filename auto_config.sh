@@ -7,7 +7,9 @@ if [[ `cat /etc/issue` == *CentOS* ]]; then
 
 elif [[ `cat /etc/issue` == *Ubuntu* ]]; then
 	sudo apt-get update && sudo apt-get upgrade
+fi
 
+# wrap in if statement
 sudo wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 
 rm -f ~/.zshrc && cp ./.zshrc ~/
