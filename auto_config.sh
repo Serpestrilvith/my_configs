@@ -12,7 +12,7 @@ elif [[ `cat /etc/issue` == *Ubuntu* ]]; then
 	sudo apt-get install zsh -y > /dev/null 2>&1
 fi
 
-# wrap in if statement
+# Check if zsh is installed
 if [ -d ~/.oh-my-zsh ]; then
 	break
 else
@@ -21,9 +21,9 @@ fi
 
 rm -f ~/.zshrc && cp ./.zshrc ~/
 
+cd ~/.oh-my-zsh/custom/plugins
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+
 if [[ `echo $SHELL` != *zsh* ]]; then
 	chsh -s $(which zsh)
 fi
-
-cd ~/.oh-my-zsh/custom/plugins
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
