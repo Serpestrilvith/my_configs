@@ -13,9 +13,7 @@ elif [[ `cat /etc/issue` == *Ubuntu* ]]; then
 fi
 
 # Check if zsh is installed
-if [ -d ~/.oh-my-zsh ]; then
-	break
-else
+if [ ! -d ~/.oh-my-zsh ]; then
 	sudo wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 fi
 
