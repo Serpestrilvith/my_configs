@@ -19,5 +19,9 @@ else
 	sudo wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 fi
 
+
 rm -f ~/.zshrc && cp ./.zshrc ~/
 chsh -s $(which zsh)
+
+cd ~/.oh-my-zsh/custom/plugins
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
