@@ -3,11 +3,13 @@
 # This script will copy the appropriate configuration files to their respective locations to ensure a homogenious environment
 
 if [[ `cat /etc/issue` == *CentOS* ]]; then
-	sudo yum update -y
-	sudo yum install zsh -y
+	echo "Updating packages and installing zsh..."
+	sudo yum update -y > /dev/null 2>&1
+	sudo yum install zsh -y > /dev/null 2>&1
 elif [[ `cat /etc/issue` == *Ubuntu* ]]; then
-	sudo apt-get update && sudo apt-get upgrade -y
-	sudo apt-get install zsh -y
+	echo "Updating packages and installing zsh..."
+	sudo apt-get update > /dev/null 2>&1 && sudo apt-get upgrade -y
+	sudo apt-get install zsh -y > /dev/null 2>&1
 fi
 
 # wrap in if statement
@@ -19,3 +21,4 @@ else
 fi
 
 rm -f ~/.zshrc && cp ./.zshrc ~/
+chsh -s $(which zsh)
