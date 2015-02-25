@@ -83,3 +83,4 @@ source $ZSH/oh-my-zsh.sh
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/siolta/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
+export SPEED_TEST=0

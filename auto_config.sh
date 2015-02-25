@@ -9,3 +9,5 @@ elif [[ `cat /etc/issue` == *Ubuntu* ]]; then
 	sudo apt-get update && sudo apt-get upgrade
 
 sudo wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+
+rm -f ~/.zshrc && cp ./.zshrc ~/
