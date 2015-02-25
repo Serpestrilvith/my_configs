@@ -4,9 +4,10 @@
 
 if [[ `cat /etc/issue` == *CentOS* ]]; then
 	sudo yum update -y
-
+	sudo yum install zsh -y
 elif [[ `cat /etc/issue` == *Ubuntu* ]]; then
-	sudo apt-get update && sudo apt-get upgrade
+	sudo apt-get update && sudo apt-get upgrade -y
+	sudo apt-get install zsh -y
 fi
 
 # wrap in if statement
