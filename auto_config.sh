@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# This script will copy the appropriate configuration files to their respective locations to ensure a homogenious environment
+# This script will install the neccesary packages and then copy the appropriate configuration 
+# files to their respective locations to ensure a homogenious environment
 
 if [[ `uname -a` == *Darwin* ]]; then
 	echo "Installing brew and zsh..."
@@ -31,6 +32,7 @@ if [[ `echo $SHELL` != *zsh* ]]; then
 	chsh -s $(which zsh)
 fi
 
+# Kills progress bar process
 kill $!; trap 'kill $!' SIGTERM
 DONE=$'\nDone!'
 echo "$DONE"
