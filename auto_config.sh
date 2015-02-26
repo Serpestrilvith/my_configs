@@ -19,7 +19,7 @@ elif [[ `cat /etc/issue` == *Ubuntu* ]]; then
 	sudo apt-get install vim zsh -y > /dev/null 2>&1
 fi
 
-# Check if zsh is installed
+# Check if oh-my-zsh is installed
 if [ ! -d ~/.oh-my-zsh ]; then
 	sudo wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 	cd ~/.oh-my-zsh/custom/plugins
@@ -28,11 +28,12 @@ fi
 
 rm -f ~/.zshrc && cp ./.zshrc ~/
 
+# Kills progress bar process
+kill $!; trap 'kill $!' SIGTERM
+
 if [[ `echo $SHELL` != *zsh* ]]; then
 	chsh -s $(which zsh)
 fi
 
-# Kills progress bar process
-kill $!; trap 'kill $!' SIGTERM
 DONE=$'\nDone!'
 echo "$DONE"
