@@ -2,7 +2,11 @@
 
 # This script will copy the appropriate configuration files to their respective locations to ensure a homogenious environment
 
-if [[ `cat /etc/issue` == *CentOS* ]]; then
+if [[ `uname -a` == *Darwin* ]]; then
+	echo "Installing brew and zsh..."
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" #> /dev/null 2>&1
+	brew install wget zsh -y #> /dev/null 2>&1
+elif [[ `cat /etc/issue` == *CentOS* ]]; then
 	echo "Updating packages and installing zsh..."
 	sudo yum update -y > /dev/null 2>&1
 	sudo yum install zsh -y > /dev/null 2>&1
@@ -10,10 +14,6 @@ elif [[ `cat /etc/issue` == *Ubuntu* ]]; then
 	echo "Updating packages and installing zsh..."
 	sudo apt-get update > /dev/null 2>&1 && sudo apt-get upgrade -y
 	sudo apt-get install zsh -y > /dev/null 2>&1
-elif [[ `uname -a` == *Darwin* ]]; then
-	echo "Installing brew and zsh..."
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	brew install wget zsh -y
 fi
 
 # Check if zsh is installed
@@ -28,3 +28,5 @@ rm -f ~/.zshrc && cp ./.zshrc ~/
 if [[ `echo $SHELL` != *zsh* ]]; then
 	chsh -s $(which zsh)
 fi
+
+echo "Done!"
