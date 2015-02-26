@@ -11,12 +11,12 @@ if [[ `uname -a` == *Darwin* ]]; then
 elif [[ `cat /etc/issue` == *CentOS* ]]; then
 	echo "Updating packages and installing zsh..."
 	sudo yum update -y > /dev/null 2>&1
-	sudo yum install zsh -y > /dev/null 2>&1
+	sudo yum install vim zsh -y > /dev/null 2>&1
 elif [[ `cat /etc/issue` == *Ubuntu* ]]; then
 	echo "Updating packages and installing zsh..."
 	while true;do echo -n .;sleep 1;done &
 	sudo apt-get update > /dev/null 2>&1 && sudo apt-get upgrade -y
-	sudo apt-get install zsh -y > /dev/null 2>&1
+	sudo apt-get install vim zsh -y > /dev/null 2>&1
 fi
 
 # Check if zsh is installed
