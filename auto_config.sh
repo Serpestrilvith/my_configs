@@ -24,9 +24,11 @@ kill $!; trap 'kill $!' SIGTERM
 # Check if oh-my-zsh is installed
 if [ ! -d ~/.oh-my-zsh ]; then
 	echo "Installing oh-my-zsh..."
+	while true;do echo -n .;sleep 1;done &
 	sudo wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 	cd ~/.oh-my-zsh/custom/plugins
 	git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+	kill $!; trap 'kill $!' SIGTERM
 fi
 
 rm -f ~/.zshrc && cp ./.zshrc ~/
