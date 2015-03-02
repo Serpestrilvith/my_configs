@@ -8,7 +8,7 @@ if [[ `uname -a` == *Darwin* ]]; then
 	while true;do echo -n .;sleep 1;done &
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null 2>&1
 	brew install wget zsh -y > /dev/null 2>&1
-elif [[ `cat /etc/issue` == *CentOS* ]]; then
+elif [[ `cat /etc/redhat-release` == *CentOS* ]]; then
 	echo "Updating packages and installing zsh..."
 	sudo yum update -y > /dev/null 2>&1
 	sudo yum install vim zsh -y > /dev/null 2>&1
