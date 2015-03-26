@@ -88,6 +88,7 @@ setopt HIST_REDUCE_BLANKS
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias speed-test='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip'
+alias is="dig +short txt istheinternetonfire.com | sed -e 's/\\; / /' -e 's/\"//g' -e 's/  / /g' | cowsay -f moose"
 
 # Export boot2docker variables
 export DOCKER_HOST=tcp://192.168.59.103:2376
