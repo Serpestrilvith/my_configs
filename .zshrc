@@ -90,7 +90,8 @@ setopt HIST_REDUCE_BLANKS
 alias speed-test='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 alias is="dig +short txt istheinternetonfire.com | sed -e 's/\\; / /' -e 's/\"//g' -e 's/  / /g' | cowsay -f moose"
 
-# Export boot2docker variables
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/siolta/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+# Export docker-machine variables
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/siolta/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"
