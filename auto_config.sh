@@ -6,7 +6,7 @@
 if [[ `uname -a` == *Darwin* ]]; then
 	echo "Installing brew and zsh..."
 	while true;do echo -n .;sleep 1;done &
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null 2>&1
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" #> /dev/null 2>&1
 	brew install wget zsh -y > /dev/null 2>&1
 elif [[ `cat /etc/redhat-release` == *CentOS* ]]; then
 	echo "Updating packages and installing zsh..."
