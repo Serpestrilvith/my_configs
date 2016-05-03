@@ -24,7 +24,6 @@ if [ ! -d ~/.oh-my-zsh ]; then
 	sudo sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 	cd ~/.oh-my-zsh/custom/plugins
 	git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-	kill $!; trap 'kill $!' SIGTERM
 fi
 
 rm -f ~/.zshrc && cp ./.zshrc ~/
